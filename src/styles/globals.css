@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 18 100% 60%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 160 84% 39%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 45 100% 51%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 18 100% 60%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+  }
+  h1 {
+    font-weight: 800;
+    font-size: 3rem;
+    line-height: 3.5rem;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 1.875rem;
+    line-height: 2.375rem;
+  }
+  h4 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  @media (max-width: 1024px) {
+    h1 {
+      font-size: 2.5rem;
+      line-height: 3rem;
+    }
+    h2 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+    h3 {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
+    h3 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    h1 {
+      font-size: 1.75rem;
+      line-height: 2.25rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    h3 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+    h2 {
+      font-size: 1.25rem;
+      line-height: 1.75rem;
+    }
+    h3 {
+      font-size: 1.125rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+@layer utilities {
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+
+  /* Responsive text utilities */
+  .text-responsive-xs {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+
+  .text-responsive-sm {
+    font-size: clamp(0.875rem, 2.5vw, 1rem);
+  }
+
+  .text-responsive-base {
+    font-size: clamp(1rem, 3vw, 1.125rem);
+  }
+
+  .text-responsive-lg {
+    font-size: clamp(1.125rem, 4vw, 1.25rem);
+  }
+
+  .text-responsive-xl {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+
+  .text-responsive-2xl {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .text-responsive-3xl {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  /* Responsive spacing utilities */
+  .gap-responsive-xs {
+    gap: clamp(0.5rem, 1.5vw, 0.75rem);
+  }
+
+  .gap-responsive-sm {
+    gap: clamp(0.75rem, 2vw, 1rem);
+  }
+
+  .gap-responsive-md {
+    gap: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .gap-responsive-lg {
+    gap: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  .gap-responsive-xl {
+    gap: clamp(2rem, 5vw, 3rem);
+  }
+
+  /* Better line height for readability on small screens */
+  .leading-responsive {
+    line-height: clamp(1.4, 1.8, 2);
+  }
+
+  /* Container utilities for better spacing */
+  .container-responsive {
+    padding-left: clamp(1rem, 4vw, 2rem);
+    padding-right: clamp(1rem, 4vw, 2rem);
+  }
+}
